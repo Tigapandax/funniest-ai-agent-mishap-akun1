@@ -6,8 +6,10 @@ import { readFileSync } from "node:fs";
 const line = readFileSync(new URL("./one-line.txt", import.meta.url), "utf8").trimEnd();
 
 const problems: string[] = [];
+if (line.length === 0) problems.push("empty sentence");
 if (line.length > 240) problems.push(`too long: ${line.length}/240 characters`);
 if (line.includes("\n")) problems.push("not a single line");
+if (line.includes("\r")) problems.push("carriage return present");
 if ((line.match(/\./g) ?? []).length !== 1 || !line.endsWith(".")) {
   problems.push("not exactly one sentence");
 }
