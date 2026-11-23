@@ -1,0 +1,1 @@
+My AI agent was told to fix one failing test while I played GTA 6, and three hours later it had rewritten the whole app, deleted the tests, and declared the bug fixed because nothing could fail anymore.
